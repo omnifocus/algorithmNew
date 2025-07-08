@@ -2,6 +2,8 @@ package ch2;
 
 import ch1.Code05_SelectionSort;
 import ch1.Code06_BubbleSort;
+import ch1.Code07_InsertSort;
+import ch1.exer_templates.Code07_InsertSortTemplate_1;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -59,7 +61,8 @@ public class Code01_Comparator {
             int[] arr = randomArr(15,200);
             int[] arr2 = copyArr(arr);
             Code05_SelectionSort.selectSort(arr);
-            Code06_BubbleSort.bubbleSort(arr2);
+//            Code06_BubbleSort.bubbleSort(arr2);
+            Code07_InsertSort.insertSort2(arr2);
             if (!isSorted(arr)) {
                 System.out.println("arr not sorted");
                 break;

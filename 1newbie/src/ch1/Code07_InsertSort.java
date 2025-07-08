@@ -9,7 +9,7 @@ public class Code07_InsertSort {
         System.out.println(Arrays.toString(arr));
     }
 
-    private static void insertSort(int[] arr) {
+    public static void insertSort(int[] arr) {
         if (arr == null || arr.length <= 1) return;
 //        for (int i=0;i<arr.length;i++) {
 //            for (int j=i-1;j>=0;j--) {
@@ -26,12 +26,26 @@ public class Code07_InsertSort {
             int newEndIndex = end;
             while (newEndIndex -1 >= 0  && arr[newEndIndex-1] > arr[newEndIndex]) {
                 swap(arr,newEndIndex,newEndIndex-1);
+                newEndIndex--;
             }
         }
 
     }
 
-    private static void swap(int[] arr, int j, int k) {
+
+
+    public static void insertSort2(int[] arr) {
+
+        if (arr == null || arr.length <= 1) return;
+        for (int i=1;i<arr.length;i++) {
+            for (int j=i-1; j >= 0 && arr[j] > arr[j+1]; j--) {
+                swap(arr,j,j+1);
+            }
+        }
+
+    }
+
+        private static void swap(int[] arr, int j, int k) {
         int tmp = arr[j];
         arr[j] = arr[k];
         arr[k] = tmp;

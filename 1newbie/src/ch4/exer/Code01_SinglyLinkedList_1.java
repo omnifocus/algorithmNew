@@ -49,7 +49,7 @@ public class Code01_SinglyLinkedList_1 {
 
 
 
-    static class Node {
+    private static class Node {
         int val;
         Node next;
 
