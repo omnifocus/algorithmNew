@@ -46,9 +46,10 @@ public class Code03_SingleLinkedList2Queue_TeacherVersion {
             if (head == null) {
                 head = newNode;
                 tail = newNode;
+            } else {
+                tail.next = newNode;
+                tail = newNode;
             }
-            tail.next = newNode;
-            tail = newNode;
             size ++;
         }
 

@@ -1,5 +1,8 @@
 package ch4;
 
+/*
+1. error !  should be included in else
+ */
 public class Code03_SingleLinkedList2Queue_MyVersion {
     static Node head;
     static Node tail;
@@ -39,6 +42,7 @@ public class Code03_SingleLinkedList2Queue_MyVersion {
             head = new Node(0);
             tail = head;
         }
+        // error !  should be included in else
         tail.next = node;
         tail = node;
 
