@@ -1,6 +1,6 @@
 package first10;
 
-public class Code02_Javanais {
+public class Code02_Javanais_MyVersion {
     public static void main(String[] args) {
         System.out.println(translate("abaseiosu"));
     }
