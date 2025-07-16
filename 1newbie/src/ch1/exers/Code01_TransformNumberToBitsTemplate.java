@@ -1,4 +1,4 @@
-package ch1.exer_templates;
+package ch1.exers;
 
 public class Code01_TransformNumberToBitsTemplate {
     public static void main(String[] args) {

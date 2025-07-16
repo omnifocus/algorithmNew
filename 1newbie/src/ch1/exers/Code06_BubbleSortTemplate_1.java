@@ -1,4 +1,4 @@
-package ch1.exer_templates;
+package ch1.exers;
 
 import java.util.Arrays;
 

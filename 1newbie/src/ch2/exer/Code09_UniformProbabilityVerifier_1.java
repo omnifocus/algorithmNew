@@ -5,24 +5,27 @@ import java.util.Arrays;
 /**
  * 从01不等概率到01等概率
  */
-public class Code09_UniformProbabilityVerifier {
+public class Code09_UniformProbabilityVerifier_1 {
 
     public static void main(String[] args) {
         int totalRecord = 10000;
         int[] arr = new int[2];
         for (int i=0;i<=totalRecord;i++) {
-
+            arr[genNum()] += 1;
         }
         System.out.println("res: " + Arrays.toString(arr));
 
     }
 
+    private static int genNum() {
+        int num;
+        do {
+            num = originGen();
+        } while (num == originGen());
 
-    //TODO
-    private static int newgen() {
-
-        return 0;
+        return num;
     }
+
 
     // 01不等概率
     private static int originGen() {

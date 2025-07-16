@@ -1,8 +1,8 @@
 package ch4.exer;
 
-public class Code02_DoubleLinkedList {
-
-
+public class Code02_DoubleLinkedList_2 {
+    
+    
     private static class Node {
         int val;
         Node pre;
@@ -48,15 +48,14 @@ public class Code02_DoubleLinkedList {
     }
 
     private static void print(Node head) {
-// test next
         Node last = null;
         while (head != null) {
             System.out.print(head.val + " ");
             last = head;
             head = head.next;
         }
-        System.out.println("-------------------");
-// test pre
+        System.out.println();
+
         while (last != null) {
             System.out.print(last.val + " ");
             last = last.pre;
@@ -65,8 +64,16 @@ public class Code02_DoubleLinkedList {
     }
 
     private static Node reverse(Node head) {
-        // TODO
-        return null;
+       Node pre = null;
+       Node next = null;
+       while (head != null) {
+           next = head.next;
+           head.next = pre;
+           head.pre = next;
+           pre = head;
+           head = next;
+       }
+       return pre;
     }
 
 
