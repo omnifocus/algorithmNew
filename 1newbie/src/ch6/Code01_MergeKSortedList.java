@@ -6,6 +6,7 @@ import java.util.PriorityQueue;
 /**
  *  for循环不能写在判断条件中,否则第一个元素不满足就不往下走了
  *  节点要加一个影子,否则返回的是最后节点
+ *  https://leetcode.com/problems/merge-k-sorted-lists/
  */
 public class Code01_MergeKSortedList {
 
@@ -62,8 +63,11 @@ public class Code01_MergeKSortedList {
             if (lists[i] != null)
             queue.add(lists[i]);
         }
+        // 如果加的元素都是空
+        if (queue.isEmpty()) return null;
+
         res = queue.poll();
-        if (res == null) return res;
+
         if (res.next != null)
             queue.add(res.next);
 
