@@ -13,7 +13,7 @@ package ch6.exer;
  *
  * Postorder → "Root Last"
  */
-public class Code02_BinaryTree_PreorderTraversal {
+public class Code02_BinaryTree_PreorderTraversal_1 {
 
     private static class Node<V> {
         V v;
@@ -34,8 +34,15 @@ public class Code02_BinaryTree_PreorderTraversal {
         traverse_Preorder(rootNode,0);
     }
 
-    //TODO
     private static void traverse_Preorder(Node<String> rootNode,int level) {
+        if (rootNode != null) {
+            for (int i = 0; i < level; i++) {
+                System.out.print("\t");
+            }
+            System.out.println(rootNode.v);
+            traverse_Preorder(rootNode.left,level+1);
+            traverse_Preorder(rootNode.right,level+1);
+        }
 
     }
 

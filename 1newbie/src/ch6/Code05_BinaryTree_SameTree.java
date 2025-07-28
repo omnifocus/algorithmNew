@@ -1,42 +1,31 @@
-package ch6.exer;
+package ch6;
 
 /**
- *         A
- *       /   \
- *      B     C
- *     / \   / \
- *    D   E F   G
- *
- * Preorder → "Root First"
- *
- * Inorder → "Root in the Middle"
- *
- * Postorder → "Root Last"
+ https://leetcode.com/problems/same-tree/
  */
-public class Code02_BinaryTree_PreorderTraversal {
+public class Code05_BinaryTree_SameTree {
 
     private static class Node<V> {
         V v;
         Node<V> left;
         Node<V> right;
+
         Node(V v) {
             this.v = v;
-        }
-
-        @Override
-        public String toString() {
-            return v.toString();
         }
     }
 
     public static void main(String[] args) {
-        Node<String> rootNode = constructTree();
-        traverse_Preorder(rootNode,0);
+        Node<String> rootNode1 = constructTree();
+        Node<String> rootNode2 = constructTree();
+        System.out.println(isSameTree(rootNode1,rootNode2));
+
     }
 
-    //TODO
-    private static void traverse_Preorder(Node<String> rootNode,int level) {
-
+    private static boolean isSameTree(Node<String> r1, Node<String> r2) {
+        if (r1 == null ^ r2 == null) return false;
+        if (r1 == null && r2 == null) return true;
+        return r1.v == r2.v && isSameTree(r1.left,r2.left) && isSameTree(r1.right,r2.right);
     }
 
     private static Node<String> constructTree() {
@@ -47,6 +36,8 @@ public class Code02_BinaryTree_PreorderTraversal {
         rootNode.left.right = new Node<>("E");
         rootNode.right.left = new Node<>("F");
         rootNode.right.right = new Node<>("G");
+
+
         return rootNode;
     }
 
