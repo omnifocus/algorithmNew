@@ -1,6 +1,6 @@
 package ch5.exer;
 
-public class Code03_binaryMockSubtarction {
+public class Code03_binaryMockSubtarction_1 {
     public static void main(String[] args) {
         int a = 46;
         int b = 20;
@@ -9,9 +9,13 @@ public class Code03_binaryMockSubtarction {
 
     }
 
-    //TODO
     private static int subtract(int a, int b) {
-        return -1;
+
+        return plus(a, neg(b));
+    }
+
+    private static int neg(int b) {
+        return ~b + 1;
     }
 
 
