@@ -15,6 +15,7 @@ public class Code01_MergeSort_Second {
         int N = arr.length-1;
         while (step < N) {
             int L = 0;
+//            为什么不等于N？ L=N时，就只有一个元素，不需要merge了
             while (L < N) {
                 int M = 0;
                 if (N - L >= step) {
