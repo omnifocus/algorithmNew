@@ -1,4 +1,4 @@
-package ch8;
+package ch8.exer;
 
 import java.util.Arrays;
 
@@ -13,21 +13,9 @@ public class Code02_QuickSort {
         System.out.println(Arrays.toString(arr));
     }
 
+    //TODO
     private static void quickSort(int[] arr) {
-        if (arr == null || arr.length < 2) return;
-        int start = 0;
-        int extendAreaIndex = -1;
-        int leN = arr[arr.length-1];
-        while (start < arr.length) {
-            if (arr[start] <= leN) {
-                    swap(arr,extendAreaIndex+1,start);
-                    start++;
-                    extendAreaIndex++;
-            }
-            else {
-                start++;
-            }
-        }
+
     }
 
     private static void swap(int[] arr, int i, int j) {
