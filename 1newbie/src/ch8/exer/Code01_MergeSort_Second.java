@@ -3,7 +3,8 @@ package ch8.exer;
 import java.util.Arrays;
 
 /**
- * https://leetcode.cn/problems/sort-an-array/
+ * https://leetcode.com/problems/sort-an-array/
+ * non recursive
  */
 public class Code01_MergeSort_Second {
     public static void main(String[] args) {
@@ -14,6 +15,9 @@ public class Code01_MergeSort_Second {
     //TODO
     private static void mergeSort(int[] arr) {
        return;
+    }
+
+    private static void merge(int[] arr, int l, int m, int r) {
     }
 
 }
