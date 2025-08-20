@@ -1,7 +1,0 @@
-package ch7.exer;
-
-/**
- * https://leetcode.com/problems/path-sum/
- */
-public class Code04_Binary_Tree_Path_Sum_1 {
-}
