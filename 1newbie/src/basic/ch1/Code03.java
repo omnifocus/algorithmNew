@@ -11,7 +11,6 @@ public class Code03 {
         System.out.println(index);
     }
 
-    //TODO
     private static int findIndex(int[] arr) {
         if (arr == null || arr.length <= 0) return -1;
         if (arr.length == 1) return 0;
