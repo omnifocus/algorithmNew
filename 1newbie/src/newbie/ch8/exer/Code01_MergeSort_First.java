@@ -3,6 +3,7 @@ package newbie.ch8.exer;
 import java.util.Arrays;
 /*
 https://leetcode.cn/problems/sort-an-array/
+recursive sort
  */
 public class Code01_MergeSort_First {
     public static void main(String[] args) {
@@ -10,9 +11,42 @@ public class Code01_MergeSort_First {
         mergeSort(arr);
         System.out.println(Arrays.toString(arr));
     }
-    //TODO
     private static void mergeSort(int[] arr) {
-       return ;
+       if (arr == null || arr.length < 2) return;
+       process(arr,0,arr.length-1);
+    }
+
+    private static void process(int[] arr, int L, int R) {
+        if (L == R) return;
+        int M = L + ((R-L)>>1);
+        process(arr,L,M);
+        process(arr,M+1,R);
+        merge(arr,L,M,R);
+    }
+
+    private static void merge(int[] arr, int L, int M, int R) {
+        int[] helper = new int[R-L+1];
+        int li = L;
+        int ri = M+1;
+        int i = 0;
+        while (li <= M && ri <= R) {
+            if (arr[li] <= arr[ri]) {
+                helper[i++] = arr[li++];
+            } else {
+                helper[i++] = arr[ri++];
+            }
+        }
+        while (li <= M) {
+            helper[i++] = arr[li++];
+        }
+        while (ri <= R) {
+            helper[i++] = arr[ri++];
+        }
+
+        for (int j = 0; j<helper.length;j++) {
+            arr[L+j] = helper[j];
+        }
+
     }
 
 }

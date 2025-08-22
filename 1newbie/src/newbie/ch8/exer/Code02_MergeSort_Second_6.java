@@ -3,12 +3,12 @@ package newbie.ch8.exer;
 import java.util.Arrays;
 
 /**
- * https://leetcode.cn/problems/sort-an-array/
+ * https://leetcode.com/problems/sort-an-array/
  * non recursive
  */
-public class Code01_MergeSort_Second_5 {
+public class Code02_MergeSort_Second_6 {
     public static void main(String[] args) {
-        int[] arr = {1,3,2,11,7,8,10,4,5};
+        int[] arr = {1,3,2,11,7,8,10,4};
         mergeSort(arr);
         System.out.println(Arrays.toString(arr));
     }
@@ -16,40 +16,33 @@ public class Code01_MergeSort_Second_5 {
         if (arr == null || arr.length < 2) return;
         int step = 1;
         int L = 0;
-        int N = arr.length;
-
-        while (step < N) {
-            L = 0;
+        int N = arr.length-1;
+        while (step <= N) {
+            L= 0;
             while (L < N) {
-                int M ;
-                if (L + step -1 <= N-1) {
-                    M = L + step -1;
+                int M = 0;
+                if (L+step-1 <= N-1) {
+                    M = L +  step -1;
                 } else {
                     M = N-1;
                 }
-                if (M == N-1) {
-                    break;
-                }
-                int R;
+                if (M == N-1) { break;}
+                int R = 0;
                 if (M+step <= N-1) {
                     R = M+step;
                 } else {
                     R = N-1;
                 }
                 merge(arr,L,M,R);
-                if (R == N-1) {
-                    break;
-                }
+                if (R == N-1) break;
                 L = R+1;
-            }
 
-            // 要小于等于！！！！！
+            }
             if (step <= (N/2)) {
                 step *= 2;
             } else {
                 break;
             }
-
         }
     }
 
@@ -75,5 +68,4 @@ public class Code01_MergeSort_Second_5 {
             arr[L+i] = helper[i];
         }
     }
-
 }

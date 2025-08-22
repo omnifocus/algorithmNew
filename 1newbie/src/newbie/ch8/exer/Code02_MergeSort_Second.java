@@ -6,7 +6,7 @@ import java.util.Arrays;
  * https://leetcode.com/problems/sort-an-array/
  * non recursive
  */
-public class Code01_MergeSort_Second {
+public class Code02_MergeSort_Second {
     public static void main(String[] args) {
         int[] arr = {1,3,2,11,7,8,10,4,5};
         mergeSort(arr);
